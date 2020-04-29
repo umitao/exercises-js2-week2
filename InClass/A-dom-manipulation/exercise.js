@@ -63,7 +63,7 @@ Task 4
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
 
-var myElement = document.querySelector(".heading-underline");
+var myElement = document.querySelector("#mainArticles");
 var addSomeText = document.querySelector("#addTextBtn");
 addSomeText.addEventListener("click", addText);
 
@@ -88,4 +88,21 @@ function enlargeText() {
   for (var i = 0; i < links.length; i++) {
     links[i].style.fontSize = "125%";
   }
+}
+
+/* 
+Task 6 
+======
+Add input text to page */
+
+var addBtn = document.querySelector("#addArticleBtn");
+
+addBtn.addEventListener("click", addInputText);
+
+function addInputText() {
+  var inputBox = document.querySelector(".addArticle");
+  var newText = inputBox.value;
+  var textToAdd = document.createElement("p");
+  myElement.appendChild(textToAdd);
+  textToAdd.innerText = newText;
 }
