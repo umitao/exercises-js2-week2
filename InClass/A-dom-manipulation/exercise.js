@@ -93,7 +93,7 @@ function enlargeText() {
 /* 
 Task 6 
 ======
-Add input text to page */
+Add input box text to page */
 
 var addBtn = document.querySelector("#addArticleBtn");
 
