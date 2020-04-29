@@ -27,6 +27,7 @@ console.log(jumbotron);
 
 var primary = document.querySelectorAll(".primary-content p");
 console.log(primary);
+
 /*
 Task 2
 ======
