@@ -19,6 +19,14 @@ Write JavaScript below that logs:
 var p = document.querySelectorAll("p");
 console.log(p);
 
+var div = document.querySelector("div");
+console.log(div);
+
+var jumbotron = document.querySelector("#jumbotron-text");
+console.log(jumbotron);
+
+var primary = document.querySelectorAll(".primary-content p");
+console.log(primary);
 /*
 Task 2
 ======
