@@ -1,6 +1,6 @@
 // Part 1 - Selecting elements to modify.
 var jumbotron = document.querySelector(".jumbotron");
-var donateBike = document.querySelector("#donateBtn");
+var donateBike = document.querySelector(".btn.btn-primary.btn-lrg");
 var volunteer = document.querySelector(".btn-secondary");
 
 // Adding button functions.
@@ -37,7 +37,8 @@ var textBox = document.querySelector("#exampleTextarea");
 var submitBtn = document
   .querySelector("#submitBtn")
   .addEventListener("click", formSubmit);
-function formSubmit() {
+
+function formSubmit(event) {
   if (mailBox.value === "") {
     mailBox.style.backgroundColor = "red";
   } else if (nameBox.value === "") {
@@ -46,5 +47,9 @@ function formSubmit() {
     textBox.style.backgroundColor = "red";
   } else {
     alert("Thank you for filling out the form.");
+    mailBox.value = "";
+    nameBox.value = "";
+    textBox.value = "";
   }
+  event.preventDefault();
 }

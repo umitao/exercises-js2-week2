@@ -35,9 +35,11 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   let content = document.querySelector("#content");
+  var shoppingList = document.createElement("ul");
+  content.appendChild(shoppingList);
   for (var i = 0; i < shopping.length; i++) {
-    var item = document.createElement("ul");
-    content.appendChild(item);
+    var item = document.createElement("li");
+    shoppingList.appendChild(item);
     item.innerText = shopping[i];
   }
 }
@@ -72,13 +74,14 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  let content = document.querySelector("#content");
+  var content = document.querySelector("#content");
+  var list = document.createElement("ul");
+  content.appendChild(list);
+  list.style.display = "flex";
   for (var i = 0; i < books.length; i++) {
-    var list = document.createElement("ul");
     var listItem = document.createElement("li");
     var titleAuthor = document.createElement("p");
     var image = document.createElement("img");
-    content.appendChild(list);
     list.appendChild(listItem);
     listItem.appendChild(titleAuthor);
     listItem.appendChild(image);
