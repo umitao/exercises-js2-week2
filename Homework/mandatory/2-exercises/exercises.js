@@ -13,8 +13,17 @@
  *      .....
  * </div>
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  for (var i = 0; i < arrayOfPeople.length; i++) {
+    var name = document.createElement("h1");
+    content.appendChild(name);
+    name.innerText = arrayOfPeople[i].name;
+    var job = document.createElement("h2");
+    content.appendChild(job);
+    job.innerText = arrayOfPeople[i].job;
+  }
 }
 
 /**
@@ -25,7 +34,12 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  for (var i = 0; i < shopping.length; i++) {
+    var item = document.createElement("ul");
+    content.appendChild(item);
+    item.innerText = shopping[i];
+  }
 }
 
 /**
@@ -74,7 +88,7 @@ function exerciseThree(books) {
 let people = [
   { name: "Chris", job: "Teacher" },
   { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Boris", job: "Prime Minister" },
 ];
 
 exerciseOne(people);
@@ -87,18 +101,18 @@ const books = [
   {
     title: "The Design of Everyday Things",
     author: "Don Norman",
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
 
 exerciseThree(books);
