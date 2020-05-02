@@ -72,7 +72,24 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let content = document.querySelector("#content");
+  for (var i = 0; i < books.length; i++) {
+    var list = document.createElement("ul");
+    var listItem = document.createElement("li");
+    var titleAuthor = document.createElement("p");
+    var image = document.createElement("img");
+    content.appendChild(list);
+    list.appendChild(listItem);
+    listItem.appendChild(titleAuthor);
+    listItem.appendChild(image);
+    image.src = books[i].url;
+    if (books[i].alreadyRead) {
+      listItem.style.backgroundColor = "green";
+    } else {
+      listItem.style.backgroundColor = "red";
+    }
+    titleAuthor.innerText = books[i].title + " - " + books[i].author;
+  }
 }
 
 //
@@ -102,16 +119,19 @@ const books = [
     title: "The Design of Everyday Things",
     author: "Don Norman",
     alreadyRead: false,
+    url: "./design_of.jpeg",
   },
   {
     title: "The Most Human Human",
     author: "Brian Christian",
     alreadyRead: true,
+    url: "./most_human.jpeg",
   },
   {
     title: "The Pragmatic Programmer",
     author: "Andrew Hunt",
     alreadyRead: true,
+    url: "./pragmatic.jpeg",
   },
 ];
 
