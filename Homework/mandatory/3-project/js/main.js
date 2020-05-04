@@ -34,22 +34,40 @@ function fGreen() {
 var mailBox = document.querySelector("#exampleInputEmail1");
 var nameBox = document.querySelector("#example-text-input");
 var textBox = document.querySelector("#exampleTextarea");
+var form = document.querySelectorAll(".form-control");
 var submitBtn = document
   .querySelector("#submitBtn")
   .addEventListener("click", formSubmit);
 
-function formSubmit(event) {
-  if (mailBox.value === "") {
-    mailBox.style.backgroundColor = "red";
-  } else if (nameBox.value === "") {
-    nameBox.style.backgroundColor = "red";
-  } else if (textBox.value === "") {
-    textBox.style.backgroundColor = "red";
-  } else {
-    alert("Thank you for filling out the form.");
-    mailBox.value = "";
-    nameBox.value = "";
-    textBox.value = "";
+function formSubmit() {
+  for (var i = 0; i < form.length; i++) {
+    if (form[i].value === "") {
+      form[i].style.borderColor = "red";
+    }
   }
+  if (!mailBox.value.includes("@")) {
+    mailBox.style.borderColor = "red";
+  }
+
+  alert("Thank you.");
+  mailBox.value = "";
+  nameBox.value = "";
+  textBox.value = "";
+
   event.preventDefault();
 }
+
+/*
+if (mailBox.value === "" && mailBox.value.includes("@")) {
+  mailBox.style.backgroundColor = "red";
+} else if (nameBox.value === "") {
+  nameBox.style.backgroundColor = "red";
+} else if (textBox.value === "") {
+  textBox.style.backgroundColor = "red";
+} else {
+  alert("Thank you for filling out the form.");
+  mailBox.value = "";
+  nameBox.value = "";
+  textBox.value = "";
+}
+*/
